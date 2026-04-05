@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Julia Bosdou | Obstetrician - Gynecologist Thessaloniki</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav id="main-nav">
+        <div class="nav-container">
+            <div class="logo">Dr. Julia Bosdou</div>
+            <ul class="nav-links">
+                <li><a href="#about" data-key="nav_about">Η Ιατρός</a></li>
+                <li><a href="#services" data-key="nav_services">Υπηρεσίες</a></li>
+                <li><a href="#contact" class="cta-btn" data-key="nav_contact">Ραντεβού</a></li>
+                <li class="lang-switcher">
+                    <button onclick="setLanguage('el')">ΕΛ</button> | 
+                    <button onclick="setLanguage('en')">EN</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span class="specialty">MD, MSc, PhD | ESHRE/EBCOG Fellow</span>
+            <h1 data-key="hero_title">Εξειδικευμένη Φροντίδα στην <em>Υποβοηθούμενη Αναπαραγωγή</em></h1>
+            <p data-key="hero_subtext">Παρέχουμε εξατομικευμένες λύσεις γονιμότητας στη Θεσσαλονίκη.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn-primary" data-key="btn_contact">Επικοινωνία</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title" data-key="services_title">Ιατρικές Υπηρεσίες</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3 data-key="service1_h">Υποβοηθούμενη Αναπαραγωγή</h3>
+                    <p data-key="service1_p">Εξειδικευμένη διερεύνηση υπογονιμότητας και εξωσωματική γονιμοποίηση (IVF).</p>
+                </div>
+                <div class="service-card">
+                    <h3 data-key="service2_h">Μαιευτική</h3>
+                    <p data-key="service2_p">Ολοκληρωμένη παρακολούθηση κύησης και τοκετού.</p>
+                </div>
+                <div class="service-card">
+                    <h3 data-key="service3_h">Γυναικολογία</h3>
+                    <p data-key="service3_p">Προληπτικός έλεγχος και χειρουργική γυναικολογία.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <p>Στέλλας 2, Πυλαία, Θεσσαλονίκη</p>
+            <p>T: 2310 304055 | Email: juliabosdou@gmail.com</p>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            el: {
+                nav_about: "Η Ιατρός",
+                nav_services: "Υπηρεσίες",
+                nav_contact: "Ραντεβού",
+                hero_title: "Εξειδικευμένη Φροντίδα στην <em>Υποβοηθούμενη Αναπαραγωγή</em>",
+                hero_subtext: "Παρέχουμε εξατομικευμένες λύσεις γονιμότητας στη Θεσσαλονίκη.",
+                btn_contact: "Επικοινωνία",
+                services_title: "Ιατρικές Υπηρεσίες",
+                service1_h: "Υποβοηθούμενη Αναπαραγωγή",
+                service1_p: "Εξειδικευμένη διερεύνηση υπογονιμότητας και εξωσωματική γονιμοποίηση (IVF).",
+                service2_h: "Μαιευτική",
+                service2_p: "Ολοκληρωμένη παρακολούθηση κύησης και τοκετού.",
+                service3_h: "Γυναικολογία",
+                service3_p: "Προληπτικός έλεγχος και χειρουργική γυναικολογία."
+            },
+            en: {
+                nav_about: "The Physician",
+                nav_services: "Services",
+                nav_contact: "Book Appointment",
+                hero_title: "Specialized Care in <em>Assisted Reproduction</em>",
+                hero_subtext: "Providing personalized fertility solutions in Thessaloniki.",
+                btn_contact: "Contact Us",
+                services_title: "Medical Services",
+                service1_h: "Assisted Reproduction",
+                service1_p: "Specialized infertility investigation and IVF treatments.",
+                service2_h: "Obstetrics",
+                service2_p: "Comprehensive pregnancy monitoring and delivery care.",
+                service3_h: "Gynecology",
+                service3_p: "Preventive screenings and gynecological surgery."
+            }
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                el.innerHTML = translations[lang][key];
+            });
+            document.documentElement.lang = lang;
+        }
+    </script>
+</body>
+</html>
